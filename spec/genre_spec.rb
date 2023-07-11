@@ -1,6 +1,4 @@
-# require_relative '../genre'
-require_relative 'genre'
-
+require_relative '../genre'
 
 RSpec.describe Genre do
   describe '#to_hash' do
