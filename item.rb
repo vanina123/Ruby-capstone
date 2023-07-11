@@ -17,7 +17,7 @@ class Item
     author.items.push(self) unless author.items.include?(self)
   end
 
-  def label=(label)
+  def add_label(label)
     @label = label.title
     label.items << self unless label.items.include?(self)
   end
