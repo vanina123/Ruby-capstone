@@ -51,5 +51,3 @@ def load_game
   end
   new_arr
 end
-
-end
