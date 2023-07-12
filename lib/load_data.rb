@@ -1,6 +1,8 @@
 require 'json'
 require_relative '../genre'
 require_relative '../music_album'
+require_relative '../game'
+require_relative '../author'
 
 def load_music_album
   return [] if File.exist?('files/music_album.json') == false
@@ -22,6 +24,30 @@ def load_genre
   file_data = JSON.parse(file)
   file_data.each do |genre|
     new_arr << Genre.new(genre['name'], genre['item'])
+  end
+  new_arr
+end
+
+def load_author
+  return [] if File.exist?('files/author.json') == false
+
+  new_arr = []
+  file = File.read('files/author.json')
+  file_data = JSON.parse(file)
+  file_data.each do |author|
+    new_arr << Author.new(author['first_name'], author['last_name'])
+  end
+  new_arr
+end
+
+def load_game
+  return [] if File.exist?('files/game.rjson') == false
+
+  new_arr = []
+  file = File.read('files/game.json')
+  file_data = JSON.parse(file)
+  file_data.each do |game|
+    new_arr << Game.new(game['multiplayer'], game['last_played_at'])
   end
   new_arr
 end
