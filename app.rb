@@ -69,21 +69,48 @@ class App
         publish_date = gets.chomp
         print 'Title:'
         title = gets.chomp
-        print 'Author:'
-        author = gets.chomp
+        print 'First name of the Author:'
+        first_name = gets.chomp
+        print 'Last name of the Author:'
+        last_name = gets.chomp
         print 'cover_state'
         cover_state = gets.chomp
         print 'genre:'
         genre = gets.chomp
-
-        book = Book.new(publish_date, title, author, cover_state, genre)
+        newGenre = Genre.new(genre)
+        newAuthor = Author.new(first_name,last_name)
+        book = Book.new(publish_date, title, newAuthor, cover_state, genre)
         @books << book
-        @genres << genre
+        if @genre.include? genre == false
+            @genre << newGenre
+        end
+        if @author.include? newAuthor == false
+            @author << newAuthor
+        end
         puts 'Book created successfully'
     end
 
     def add_music_album
-        
+        print 'The name of the title:'
+        title = gets.chomp
+        print 'The name of the artist:'
+        artist = gets.chomp
+        print 'The genre of the album:'
+        genre = gets.chomp
+        print 'is it on spotify?[Y,N]'
+         spotify = gets.chomp
+         if spotify == "Y" or 'y'
+            on_spotify = true
+         else 
+            on_spotify = false
+            end
+            newGenre = Genre.new(genre)
+            music = MusicAlbum.new(title, artist, newGenre, on_spotify)
+            if @genre.include? genre == false
+
+                @genre << newGenre
+            end
+        @music << music
     end
 
     def add_movies
