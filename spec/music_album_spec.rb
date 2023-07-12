@@ -1,16 +1,14 @@
 require_relative '../music_album'
 
-
 RSpec.describe MusicAlbum do
   describe '#to_hash' do
     it 'returns a hash representation of the music album' do
-      album = MusicAlbum.new('Album 1', 'Pop', true)
-      hash = album.to_hash
+      album = MusicAlbum.new('freedom', 'Album', 'Pop', true)
 
-      expect(hash).to be_a(Hash)
-      expect(hash[:name]).to eq('Album 1')
-      expect(hash[:genre]).to eq('Pop')
-      expect(hash[:on_spotify]).to be(true)
+      expect(album.title).to eq('freedom')
+      expect(album.artist).to eq('Album')
+      expect(album.genre).to eq('Pop')
+      expect(album.on_spotify).to be(true)
     end
   end
 end
