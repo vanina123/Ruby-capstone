@@ -2,7 +2,7 @@ require_relative '../game'
 
 RSpec.describe Game do
   describe '#Game' do
-    it 'returns a hash representation of the genre' do
+    it 'returns the data of Game class' do
       game = Game.new('2022-10-01',true, "2023-01-01")
 
       expect(game.publish_date).to eq('2022-10-01')
