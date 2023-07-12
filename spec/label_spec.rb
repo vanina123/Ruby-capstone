@@ -1,7 +1,6 @@
 require_relative '../label'
 require_relative '../music_album'
 
-
 RSpec.describe Label do
   describe '#Label' do
     it 'returns a hash representation of the label' do
