@@ -110,9 +110,29 @@ class App
                 @genre << newGenre
             end
         @music << music
+        print "the music album has been added"
     end
 
     def add_game
+        print 'The title of the game:'
+        title = gets.chomp
+        print 'The published date of the game:'
+        publish_date = gets.chomp
+        print "is it a multiplayer game?[Y,N]"
+        answer = gets.chomp
+        if answer == "Y" or 'y'
+            multiplayer = true
+         else 
+            multiplayer = false
+            end
+        print 'The genre of the album:'
+        genre = gets.chomp
+        newGenre = Genre.new(genre)
+        game = Game.new(title,publish_date, multiplayer, newGenre)
+        if @genre.include? genre == false
+            @genre << newGenre
+        end
+        @game << game
     end
 
     def quit
