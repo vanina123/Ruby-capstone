@@ -24,10 +24,7 @@ class Book < Item
   def self.new_from_hash(hash)
     new(
       hash['publish_date'],
-      hash['title'],
-      hash['author'],
-      hash['cover_state'],
-      hash['genre']
+  hash['genre']
     )
   end
 end

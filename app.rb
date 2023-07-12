@@ -107,13 +107,9 @@ class App
             newGenre = Genre.new(genre)
             music = MusicAlbum.new(title, artist, newGenre, on_spotify)
             if @genre.include? genre == false
-
                 @genre << newGenre
             end
         @music << music
-    end
-
-    def add_movies
     end
 
     def add_game
