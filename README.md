@@ -116,8 +116,11 @@ _[JONATHAN]_
 - LinkedIn: [@kayembajonathan](https://www.linkedin.com/in/jonathan-kayembb56247236/)
 - Twitter: [@JonathanKa97287](@JonathanKa97287)
 
-👤 **Author2**
-_[VAN]_
+👤 **Nana VAnina**
+- GitHub: [@vanina123](https://github.com/vanina123)
+- Twitter: [@DUfevan](https://twitter.com/DufeVanina)
+- LinkedIn: [Vanina](https://www.linkedin.com/in/larissa-vanina/)
+
 
 👤 **Author3**
 _[ABDULLAH]_
