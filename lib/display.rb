@@ -5,7 +5,7 @@ class Display
         2 => 'list_all_music_albums',
         3 => 'list_all_games',
         4 => 'list_all_genre',
-        5 => 'List_all_labels',
+        5 => 'list_all_labels',
         6 => 'list_all_authors',
         7 => 'add_book',
         8 => 'add_music_album',

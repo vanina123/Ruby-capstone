@@ -12,5 +12,26 @@
     "genre": "genre",
     "on_spotify": true,
     "label": "new"
+  },
+  {
+    "title": "Jack",
+    "artist": "Jhon",
+    "genre": "fiction",
+    "on_spotify": false,
+    "label": "blue"
+  },
+  {
+    "title": "music",
+    "artist": "artist",
+    "genre": "fiction",
+    "on_spotify": true,
+    "label": "green"
+  },
+  {
+    "title": "musci",
+    "artist": "artsit 91",
+    "genre": "ficiton",
+    "on_spotify": true,
+    "label": "green"
   }
 ]

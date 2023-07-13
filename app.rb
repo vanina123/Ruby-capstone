@@ -79,37 +79,24 @@ class App
         newAuthor = Author.new(first_name,last_name)
         book = Book.new(publish_date, title, first_name, last_name, cover_state, genre, label)
         @books << book
-        if @authors != []
-            if @authors.include? newAuthor  == false
+       
                 @authors << newAuthor
-                end
-            else
-                @authors << newAuthor
-            end
+          
             @authors.each do |auth|
                 if auth.first_name == newAuthor.first_name && auth.last_name == newAuthor.last_name
                     auth.items << newAuthor
                 end
             end
-        if @genres != []
-            if @genres.include? genre == false
-                @genres << newGenre
-            end
-        else
-            @genres << newGenre
-        end
+            
+         @genre << newGenre.name
             @genres.each do |gen|
                 if gen.name == genre
                     gen.items << book.title
                 end
             end
-            if @labels != []
-                if @labels.include? newLabel  == false
+
                     @labels << newLabel
-                    end
-                else
-                    @labels << newLabel
-                end
+
                 @labels.each do |lab|
                     if lab.title == label
                         lab.items << book.label
@@ -138,25 +125,17 @@ class App
             newGenre = Genre.new(genre)
             music = MusicAlbum.new(title, artist, genre, on_spotify,label)
             
-            if @genres != []
-                if @genres.include? genre == false
-                    @genres << newGenre
-                end
-            else
+
                 @genres << newGenre
-            end
+
             @genres.each do |gen|
                 if gen.name == genre
                     gen.items << music.title
                 end
             end
-            if @labels != []
-                if @labels.include? newLabel  == false
+
                     @labels << newLabel
-                    end
-                else
-                    @labels << newLabel
-                end
+
                 @labels.each do |lab|
                     if lab.title == label
                         lab.items << music.label
@@ -187,20 +166,12 @@ class App
         newLabel = Label.new(label)
         newGenre = Genre.new(genre)
         game = Game.new(title,publish_date, multiplayer, last_played_at,genre,label)
-        if @genres != []
-        if @genres.include? genre == false
-            @genres << newGenre
-        end
-    else
+
         @genres << newGenre
-    end
-    if @labels != []
-        if @labels.include? newLabel  == false
+
+
             @labels << newLabel
-            end
-        else
-            @labels << newLabel
-        end
+
         
             @labels.each do |lab|
                 if lab.title == label
