@@ -128,14 +128,16 @@ class App
          else 
             multiplayer = false
             end
-        print 'The genre of the album:'
+        print 'The genre of the game:'
         genre = gets.chomp
+        print 'Last played at:'
+        last_played_at = gets.chomp
         newGenre = Genre.new(genre)
-        game = Game.new(title,publish_date, multiplayer, newGenre)
-        if @genre.include? genre == false
-            @genre << newGenre
+        game = Game.new(title,publish_date, multiplayer, last_played_at,newGenre)
+        if @genres.include? genre == false
+            @genres << newGenre
         end
-        @game << game
+        @games << game
     end
 
     def quit
@@ -192,8 +194,10 @@ class App
         new_arr = []
         @games.each do |game|
           obj = {
+            title: game.title,
             multiplayer: game.multiplayer,
-            last_played_at: game.last_played_at
+            last_played_at: game.last_played_at,
+            publish_date: game.publish_date
           }
           new_arr << obj
         end
@@ -207,8 +211,8 @@ class App
             publish_date: book.publish_date,
             title: book.title,
             author:{
-            first_name: book.author.first_name,
-            last_name: book.author.last_name
+            first_name: book.author['first_name'],
+            last_name: book.author['last_name']
         },
             cover_state: book.cover_state,
             genre: book.genre
