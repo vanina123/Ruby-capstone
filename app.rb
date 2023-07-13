@@ -136,6 +136,12 @@ class App
     end
 
     def quit
+
+        puts 'existing the app. Goodbye'
+    #    save_books(@books)
+    #    save_people(@people)
+    #    save_rentals(@rentals)
+       exit
     end
 
 end

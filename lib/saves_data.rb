@@ -1,4 +1,4 @@
-requre 'json'
+require 'json'
 
 class Item
   def to_hash
