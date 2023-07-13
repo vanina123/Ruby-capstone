@@ -3,7 +3,7 @@ require_relative '../book'
 RSpec.describe Book do
   describe '#Book' do
     it 'returns a hash representation of the book' do
-      book = Book.new('2018-01-01', 'Book', 'first name', 'last name', 'Good', 'Horror', 'new')
+      book = Book.new('2018-01-01', 'Book', 'first name', 'last name', 'Good', 'Horror', 'new', true)
 
       expect(book.publish_date).to eq('2018-01-01')
       expect(book.title).to eq('Book')

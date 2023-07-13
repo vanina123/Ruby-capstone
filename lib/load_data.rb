@@ -68,7 +68,8 @@ def load_book
       book['last_name'],
       book['cover_state'],
       book['genre'],
-      book['label']
+      book['label'],
+      book['archived']
     )
   end
   new_arr

@@ -6,7 +6,8 @@
     "last_name": "eye",
     "cover_state": "healthy",
     "genre": "superb",
-    "label": "green"
+    "label": "green",
+    "archived": true
   },
   {
     "publish_date": "2022",
@@ -15,7 +16,8 @@
     "last_name": "machine",
     "cover_state": "bad",
     "genre": "development",
-    "label": "old"
+    "label": "old",
+    "archived": true
   },
   {
     "publish_date": "2022",
@@ -24,7 +26,8 @@
     "last_name": "jack",
     "cover_state": "healthy",
     "genre": "fiction",
-    "label": "old"
+    "label": "old",
+    "archived": true
   },
   {
     "publish_date": "2022",
@@ -33,7 +36,8 @@
     "last_name": "jack",
     "cover_state": "healthy",
     "genre": "fiction",
-    "label": "new"
+    "label": "new",
+    "archived": true
   },
   {
     "publish_date": "2022",
@@ -42,7 +46,8 @@
     "last_name": "khabib",
     "cover_state": "healthy",
     "genre": "fiction",
-    "label": "blue"
+    "label": "blue",
+    "archived": true
   },
   {
     "publish_date": "2022",
@@ -51,7 +56,8 @@
     "last_name": "Jhon",
     "cover_state": "healthy",
     "genre": "fiction",
-    "label": "blue"
+    "label": "blue",
+    "archived": true
   },
   {
     "publish_date": "2022",
@@ -60,7 +66,8 @@
     "last_name": "Jack",
     "cover_state": "healthy",
     "genre": "fiction",
-    "label": "blue"
+    "label": "blue",
+    "archived": true
   },
   {
     "publish_date": "2022",
@@ -69,7 +76,8 @@
     "last_name": "jhon",
     "cover_state": "healthy",
     "genre": "fiction",
-    "label": "old"
+    "label": "old",
+    "archived": true
   },
   {
     "publish_date": "2022",
@@ -78,6 +86,7 @@
     "last_name": "jack",
     "cover_state": "heatlhy",
     "genre": "fiction",
-    "label": "new"
+    "label": "new",
+    "archived": true
   }
 ]
