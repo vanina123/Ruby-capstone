@@ -33,5 +33,19 @@
     "genre": "ficiton",
     "on_spotify": true,
     "label": "green"
+  },
+  {
+    "title": "free",
+    "artist": "james",
+    "genre": "fiction",
+    "on_spotify": true,
+    "label": "new"
+  },
+  {
+    "title": "Music",
+    "artist": "Jack",
+    "genre": "Pop",
+    "on_spotify": true,
+    "label": "old"
   }
 ]

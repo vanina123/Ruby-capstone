@@ -86,7 +86,7 @@ class App
       auth.items << newauthor if auth.first_name == newauthor.first_name && auth.last_name == newauthor.last_name
     end
 
-    @genre << newgenre.name
+    @genres << newgenre
     @genres.each do |gen|
       gen.items << book.title if gen.name == genre
     end

@@ -25,10 +25,4 @@ class Book < Item
     }
   end
 
-  def self.new_from_hash(hash)
-    new(
-      hash['publish_date'],
-      hash['genre']
-    )
-  end
 end
