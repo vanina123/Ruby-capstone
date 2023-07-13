@@ -24,5 +24,4 @@ class Book < Item
       label: @label
     }
   end
-
 end
