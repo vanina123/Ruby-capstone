@@ -1,0 +1,12 @@
+[
+  {
+    "publish_date": "2022",
+    "title": "title",
+    "author": {
+      "first_name": "james",
+      "last_name": "james"
+    },
+    "cover_state": "good",
+    "genre": "genre"
+  }
+]

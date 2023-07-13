@@ -55,7 +55,7 @@ def load_game
 end
 
 def load_book
-  return [] if File.exist?('files/book.rjson') == false
+  return [] if File.exist?('files/book.json') == false
 
   new_arr = []
   file = File.read('files/book.json')
@@ -73,7 +73,7 @@ def load_book
 end
 
 def load_label
-  return [] if File.exist?('files/label.rjson') == false
+  return [] if File.exist?('files/label.json') == false
 
   new_arr = []
   file = File.read('files/label.json')

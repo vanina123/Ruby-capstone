@@ -19,8 +19,8 @@ class App
     end
 
     def list_all_books
-        @book.each do |book|
-            puts "#{book.publish_date} Title: #{book.title} by #{book.author} cover_state: #{book.cover_state} Genre: #{book.genre}"
+        @books.each do |book|
+            puts "Title: #{book.title} by  cover_state: #{book.cover_state} Genre: #{book.genre} publish date: #{book.publish_date}"
         end
     end
 
@@ -76,12 +76,14 @@ class App
         newAuthor = Author.new(first_name,last_name)
         book = Book.new(publish_date, title, newAuthor, cover_state, genre)
         @books << book
-        if @genre.include? genre == false
-            @genre << newGenre
-        end
-        if @author.include? newAuthor == false
-            @author << newAuthor
-        end
+        if @genres.include? newGenre == false
+            @genres << newGenre
+            end
+            @genres.each do |gen|
+                if gen.name == genre
+                    gen.items << book.title
+                end
+            end
         puts 'Book created successfully'
     end
 
@@ -100,8 +102,16 @@ class App
             on_spotify = false
             end
             newGenre = Genre.new(genre)
-            music = MusicAlbum.new(title, artist, newGenre.name, on_spotify)
+            music = MusicAlbum.new(title, artist, genre, on_spotify)
+            
+            if @genres.include? newGenre == false
             @genres << newGenre
+            end
+            @genres.each do |gen|
+                if gen.name == genre
+                    gen.items << music.title
+                end
+            end
         @music_albums << music
         puts "the music album has been added"
     end
@@ -159,7 +169,7 @@ class App
         @genres.each do |genre|
           obj = {
             name: genre.name,
-            item: genre.items
+            items: genre.items
           }
           new_arr << obj
         end
@@ -196,7 +206,10 @@ class App
           obj = {
             publish_date: book.publish_date,
             title: book.title,
-            author: book.author,
+            author:{
+            first_name: book.author.first_name,
+            last_name: book.author.last_name
+        },
             cover_state: book.cover_state,
             genre: book.genre
           }

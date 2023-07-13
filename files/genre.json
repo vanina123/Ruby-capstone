@@ -1,31 +1,31 @@
 [
   {
     "name": "genre",
-    "item": [
-
+    "items": [
+      "title"
     ]
   },
   {
     "name": "genre 2",
-    "item": [
+    "items": [
 
     ]
   },
   {
     "name": "genre 1",
-    "item": [
+    "items": [
 
     ]
   },
   {
     "name": "genre 3",
-    "item": [
+    "items": [
 
     ]
   },
   {
     "name": "horro",
-    "item": [
+    "items": [
 
     ]
   }
