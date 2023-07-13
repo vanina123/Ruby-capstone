@@ -1,10 +1,11 @@
 require_relative 'media_item'
 
 class MusicAlbum < MediaItem
-  attr_accessor :title, :artist, :genre, :on_spotify, :label
+  attr_accessor :title, :artist, :genre, :on_spotify, :label, :id
 
   def initialize(title, artist, genre, on_spotify, label)
     super(title, artist, genre)
+    @id = Random.rand(1...1000)
     @on_spotify = on_spotify
     @label = label
   end

@@ -20,19 +20,19 @@ class App
 
   def list_all_books
     @books.each do |book|
-      puts "Title: #{book.title} by #{book.first_name} #{book.last_name} cover_state: #{book.cover_state} Genre: #{book.genre} publish date: #{book.publish_date}"
+      puts "id:#{book.id} Title: #{book.title} by #{book.first_name} #{book.last_name} cover_state: #{book.cover_state} Genre: #{book.genre} publish date: #{book.publish_date}"
     end
   end
 
   def list_all_music_albums
     @music_albums.each do |music_album|
-      puts "title: #{music_album.title} by: #{music_album.artist} Genre: #{music_album.genre} spotify: #{music_album.on_spotify}"
+      puts "id:#{music_album.id} title: #{music_album.title} by: #{music_album.artist} Genre: #{music_album.genre} spotify: #{music_album.on_spotify}"
     end
   end
 
   def list_all_games
     @games.each do |game|
-      puts "title: #{game.title} published date: #{game.publish_date} is it multiplayer: #{game.multiplayer} the last time game played: #{game.last_played_at}"
+      puts " id:#{game.id} title: #{game.title} published date: #{game.publish_date} is it multiplayer: #{game.multiplayer} the last time game played: #{game.last_played_at}"
     end
   end
 
