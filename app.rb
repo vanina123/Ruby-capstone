@@ -20,7 +20,7 @@ class App
 
     def list_all_books
         @books.each do |book|
-            puts "Title: #{book.title} by #{book.author['first_name']} #{book.author['last_name']} cover_state: #{book.cover_state} Genre: #{book.genre} publish date: #{book.publish_date}"
+            puts "Title: #{book.title} by #{book.first_name} #{book.last_name} cover_state: #{book.cover_state} Genre: #{book.genre} publish date: #{book.publish_date}"
         end
     end
 
@@ -77,21 +77,41 @@ class App
         newLabel = Label.new(label)
         newGenre = Genre.new(genre)
         newAuthor = Author.new(first_name,last_name)
-        book = Book.new(publish_date, title, newAuthor, cover_state, genre, label)
+        book = Book.new(publish_date, title, first_name, last_name, cover_state, genre, label)
         @books << book
-        if @genres.include? newGenre == false
-            @genres << newGenre
+        if @authors != []
+            if @authors.include? newAuthor  == false
+                @authors << newAuthor
+                end
+            else
+                @authors << newAuthor
             end
+            @authors.each do |auth|
+                if auth.first_name == newAuthor.first_name && auth.last_name == newAuthor.last_name
+                    auth.items << newAuthor
+                end
+            end
+        if @genres != []
+            if @genres.include? genre == false
+                @genres << newGenre
+            end
+        else
+            @genres << newGenre
+        end
             @genres.each do |gen|
                 if gen.name == genre
                     gen.items << book.title
                 end
             end
-            if @labels.include? newLabel == false
-                @labels << newLabel
+            if @labels != []
+                if @labels.include? newLabel  == false
+                    @labels << newLabel
+                    end
+                else
+                    @labels << newLabel
                 end
                 @labels.each do |lab|
-                    if lab.name == label
+                    if lab.title == label
                         lab.items << book.label
                     end
                 end
@@ -118,19 +138,27 @@ class App
             newGenre = Genre.new(genre)
             music = MusicAlbum.new(title, artist, genre, on_spotify,label)
             
-            if @genres.include? newGenre == false
-            @genres << newGenre
+            if @genres != []
+                if @genres.include? genre == false
+                    @genres << newGenre
+                end
+            else
+                @genres << newGenre
             end
             @genres.each do |gen|
                 if gen.name == genre
                     gen.items << music.title
                 end
             end
-            if @labels.include? newLabel  == false
-                @labels << newLabel
+            if @labels != []
+                if @labels.include? newLabel  == false
+                    @labels << newLabel
+                    end
+                else
+                    @labels << newLabel
                 end
                 @labels.each do |lab|
-                    if lab.name == label
+                    if lab.title == label
                         lab.items << music.label
                     end
                 end
@@ -159,14 +187,23 @@ class App
         newLabel = Label.new(label)
         newGenre = Genre.new(genre)
         game = Game.new(title,publish_date, multiplayer, last_played_at,genre,label)
+        if @genres != []
         if @genres.include? genre == false
             @genres << newGenre
         end
+    else
+        @genres << newGenre
+    end
+    if @labels != []
         if @labels.include? newLabel  == false
             @labels << newLabel
             end
+        else
+            @labels << newLabel
+        end
+        
             @labels.each do |lab|
-                if lab.name == label
+                if lab.title == label
                     lab.items << game.label
                 end
             end
@@ -245,9 +282,8 @@ class App
           obj = {
             publish_date: book.publish_date,
             title: book.title,
-            author:{
-            first_name: book.author['first_name'],
-            last_name: book.author['last_name']},
+            first_name: book.first_name ,
+            last_name: book.last_name ,
             cover_state: book.cover_state,
             genre: book.genre,
             label: book.label
@@ -262,7 +298,7 @@ class App
         @labels.each do |label|
           obj = {
             title: label.title,
-            items: label.items.map { |item| { name: item.name } }
+            items: label.items
           }
           new_arr << obj
         end

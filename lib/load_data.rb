@@ -64,7 +64,8 @@ def load_book
     new_arr << Book.new(
       book['publish_date'],
       book['title'],
-      book['author'],
+      book['first_name'],
+      book['last_name'],
       book['cover_state'],
       book['genre'],
       book['label']
@@ -81,8 +82,7 @@ def load_label
   file_data = JSON.parse(file)
   file_data.each do |label|
     new_arr << Label.new(
-      label['title'],
-      label['items'].map { |item_hash| Item.new(item_hash['name']) }
+      label['title']
     )
   end
   new_arr

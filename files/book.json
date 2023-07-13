@@ -1,13 +1,20 @@
 [
   {
     "publish_date": "2022",
-    "title": "title",
-    "author": {
-      "first_name": "fist",
-      "last_name": "last"
-    },
-    "cover_state": "good",
-    "genre": "self",
-    "label": "2022"
+    "title": "hacker",
+    "first_name": "hound",
+    "last_name": "eye",
+    "cover_state": "healthy",
+    "genre": "superb",
+    "label": "green"
+  },
+  {
+    "publish_date": "2022",
+    "title": "hakcer",
+    "first_name": "death",
+    "last_name": "machine",
+    "cover_state": "bad",
+    "genre": "development",
+    "label": "old"
   }
 ]
