@@ -7,8 +7,7 @@ require_relative 'music_album'
 require_relative 'game'
 require_relative 'lib/save_data'
 require_relative 'lib/load_data'
-# require_relative 'lib/saves_data'
-# require_relative 'lib/loads_data'
+require_relative 'lib/loads_data'
 
 class App
     def initialize
@@ -28,7 +27,7 @@ class App
 
     def list_all_music_albums
         @music_albums.each do |music_album|
-            puts "#{music_album.title} by: #{music_album.artist} Genre: #{music_album.genre} spotify: #{music_album.on_spotify}"
+            puts "title: #{music_album.title} by: #{music_album.artist} Genre: #{music_album.genre.name} spotify: #{music_album.on_spotify}"
         end
     end
 
@@ -37,7 +36,7 @@ class App
 
     def list_all_games
         @games.each do |game|
-            puts "#{game.publish_date} #{game.multiplayer} #{game.last_played_at}"
+            puts "title: #{game.title} published date: #{game.publish_date} is it multiplayer: #{game.multiplayer} the last time game played: #{game.last_played_at}"
         end
     end
 
@@ -73,7 +72,7 @@ class App
         first_name = gets.chomp
         print 'Last name of the Author:'
         last_name = gets.chomp
-        print 'cover_state:'
+        print 'cover_state'
         cover_state = gets.chomp
         print 'genre:'
         genre = gets.chomp
@@ -106,10 +105,8 @@ class App
             end
             newGenre = Genre.new(genre)
             music = MusicAlbum.new(title, artist, newGenre, on_spotify)
-            if @genre.include? genre === false
-                @genre << newGenre
-            end
-        @music << music
+
+        @music_albums << music
         print "the music album has been added"
     end
 
@@ -129,7 +126,7 @@ class App
         genre = gets.chomp
         newGenre = Genre.new(genre)
         game = Game.new(title,publish_date, multiplayer, newGenre)
-        if @genre.include? genre === false
+        if @genre.include? genre == false
             @genre << newGenre
         end
         @game << game
