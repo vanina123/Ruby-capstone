@@ -43,13 +43,13 @@ def load_author
 end
 
 def load_game
-  return [] if File.exist?('files/game.rjson') == false
+  return [] if File.exist?('files/game.json') == false
 
   new_arr = []
   file = File.read('files/game.json')
   file_data = JSON.parse(file)
   file_data.each do |game|
-    new_arr << Game.new(game['title'],game['multiplayer'], game['last_played_at'], game['genre'], game['label'])
+    new_arr << Game.new(game['title'],game['publish_date'],game['multiplayer'], game['last_played_at'], game['genre'], game['label'])
   end
   new_arr
 end

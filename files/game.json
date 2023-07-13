@@ -4,6 +4,13 @@
     "multiplayer": true,
     "last_played_at": "2022",
     "publish_date": "2022",
-    "label": "new"
+    "label": "gift"
+  },
+  {
+    "title": "final",
+    "multiplayer": true,
+    "last_played_at": "2023",
+    "publish_date": "2021",
+    "label": "blue"
   }
 ]
