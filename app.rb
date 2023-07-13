@@ -74,10 +74,12 @@ class App
     genre = gets.chomp
     print 'What would you like to labe it?'
     label = gets.chomp
+    print 'Can be archieved?'
+    gets.chomp
     newlable = Label.new(label)
     newgenre = Genre.new(genre)
     newauthor = Author.new(first_name, last_name)
-    book = Book.new(publish_date, title, first_name, last_name, cover_state, genre, label)
+    book = Book.new(publish_date, title, first_name, last_name, cover_state, genre, label, archived)
     @books << book
 
     @authors << newauthor
@@ -233,7 +235,8 @@ class App
         last_name: book.last_name,
         cover_state: book.cover_state,
         genre: book.genre,
-        label: book.label
+        label: book.label,
+        archived: book.archived
       }
       new_arr << obj
     end
