@@ -99,9 +99,9 @@ To run tests, run the following command:
 - `rubocop --color`
 - `rspec spec --format doc`
 
-### Deployment
+### The capstone recording
 
-- Project is not deployed
+[Recording](https://drive.google.com/file/d/1Qai9cfAQvFyQu7pfdmRmlIw0MMa_dql8/view?usp=drive_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
