@@ -1,68 +1,16 @@
 [
   {
-    "title": "title 1",
-    "artist": "artist 1",
-    "genre": "genre 1",
-    "on_spotify": null
-  },
-  {
-    "title": "title 3",
-    "artist": "artist 3",
-    "genre": "genre 3",
-    "on_spotify": null
-  },
-  {
-    "title": "title 17",
-    "artist": "artist 17",
-    "genre": "horro",
-    "on_spotify": false
+    "title": "title ",
+    "artist": "artist",
+    "genre": "pop",
+    "on_spotify": true,
+    "label": "new"
   },
   {
     "title": "title",
     "artist": "artist",
     "genre": "genre",
-    "on_spotify": true
-  },
-  {
-    "title": "title",
-    "artist": "artist",
-    "genre": "genre",
-    "on_spotify": true
-  },
-  {
-    "title": "title",
-    "artist": "artist",
-    "genre": "genre",
-    "on_spotify": true
-  },
-  {
-    "title": "title",
-    "artist": "artist",
-    "genre": "genre",
-    "on_spotify": true
-  },
-  {
-    "title": "title 2",
-    "artist": "artist 2",
-    "genre": "genre",
-    "on_spotify": true
-  },
-  {
-    "title": "title  1",
-    "artist": "artist 1",
-    "genre": "genre",
-    "on_spotify": true
-  },
-  {
-    "title": "title 21",
-    "artist": "artsit 21",
-    "genre": "genre",
-    "on_spotify": true
-  },
-  {
-    "title": "title",
-    "artist": "artist",
-    "genre": "genre",
-    "on_spotify": true
+    "on_spotify": true,
+    "label": "new"
   }
 ]

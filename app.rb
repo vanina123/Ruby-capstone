@@ -72,9 +72,12 @@ class App
         cover_state = gets.chomp
         print 'genre:'
         genre = gets.chomp
+        print  'What would you like to labe it?'
+        label = gets.chomp
+        newLabel = Label.new(label)
         newGenre = Genre.new(genre)
         newAuthor = Author.new(first_name,last_name)
-        book = Book.new(publish_date, title, newAuthor, cover_state, genre)
+        book = Book.new(publish_date, title, newAuthor, cover_state, genre, label)
         @books << book
         if @genres.include? newGenre == false
             @genres << newGenre
@@ -84,6 +87,14 @@ class App
                     gen.items << book.title
                 end
             end
+            if @labels.include? newLabel == false
+                @labels << newLabel
+                end
+                @labels.each do |lab|
+                    if lab.name == label
+                        lab.items << book.label
+                    end
+                end
         puts 'Book created successfully'
     end
 
@@ -96,13 +107,16 @@ class App
         genre = gets.chomp
         print 'is it on spotify?[Y,N]:'
          spotify = gets.chomp
+         print  'What would you like to labe it?'
+        label = gets.chomp
          if spotify == "Y" or spotify == 'y'
             on_spotify = true
          else 
             on_spotify = false
             end
+            newLabel = Label.new(label)
             newGenre = Genre.new(genre)
-            music = MusicAlbum.new(title, artist, genre, on_spotify)
+            music = MusicAlbum.new(title, artist, genre, on_spotify,label)
             
             if @genres.include? newGenre == false
             @genres << newGenre
@@ -112,6 +126,14 @@ class App
                     gen.items << music.title
                 end
             end
+            if @labels.include? newLabel  == false
+                @labels << newLabel
+                end
+                @labels.each do |lab|
+                    if lab.name == label
+                        lab.items << music.label
+                    end
+                end
         @music_albums << music
         puts "the music album has been added"
     end
@@ -132,11 +154,22 @@ class App
         genre = gets.chomp
         print 'Last played at:'
         last_played_at = gets.chomp
+        print  'What would you like to labe it?'
+        label = gets.chomp
+        newLabel = Label.new(label)
         newGenre = Genre.new(genre)
-        game = Game.new(title,publish_date, multiplayer, last_played_at,newGenre)
+        game = Game.new(title,publish_date, multiplayer, last_played_at,genre,label)
         if @genres.include? genre == false
             @genres << newGenre
         end
+        if @labels.include? newLabel  == false
+            @labels << newLabel
+            end
+            @labels.each do |lab|
+                if lab.name == label
+                    lab.items << game.label
+                end
+            end
         @games << game
     end
 
@@ -159,7 +192,8 @@ class App
             title: album.title,
             artist: album.artist,
             genre: album.genre,
-            on_spotify: album.on_spotify
+            on_spotify: album.on_spotify,
+            label: album.label
           }
           new_arr << obj
         end
@@ -197,7 +231,8 @@ class App
             title: game.title,
             multiplayer: game.multiplayer,
             last_played_at: game.last_played_at,
-            publish_date: game.publish_date
+            publish_date: game.publish_date,
+            label: game.label
           }
           new_arr << obj
         end
@@ -212,10 +247,10 @@ class App
             title: book.title,
             author:{
             first_name: book.author['first_name'],
-            last_name: book.author['last_name']
-        },
+            last_name: book.author['last_name']},
             cover_state: book.cover_state,
-            genre: book.genre
+            genre: book.genre,
+            label: book.label
           }
           new_arr << obj
         end

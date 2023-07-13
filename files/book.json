@@ -3,10 +3,11 @@
     "publish_date": "2022",
     "title": "title",
     "author": {
-      "first_name": "james",
-      "last_name": "james"
+      "first_name": "fist",
+      "last_name": "last"
     },
     "cover_state": "good",
-    "genre": "genre"
+    "genre": "self",
+    "label": "2022"
   }
 ]

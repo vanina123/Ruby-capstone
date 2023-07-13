@@ -13,7 +13,7 @@ def load_music_album
   file = File.read('files/music_albums.json')
   file_data = JSON.parse(file)
   file_data.each do |album|
-    new_arr << MusicAlbum.new(album['title'], album['artist'], album['genre'], album['on_spotify'])
+    new_arr << MusicAlbum.new(album['title'], album['artist'], album['genre'], album['on_spotify'], album['label'])
   end
   new_arr
 end
@@ -49,7 +49,7 @@ def load_game
   file = File.read('files/game.json')
   file_data = JSON.parse(file)
   file_data.each do |game|
-    new_arr << Game.new(game['multiplayer'], game['last_played_at'])
+    new_arr << Game.new(game['title'],game['multiplayer'], game['last_played_at'], game['genre'], game['label'])
   end
   new_arr
 end
@@ -66,7 +66,8 @@ def load_book
       book['title'],
       book['author'],
       book['cover_state'],
-      book['genre']
+      book['genre'],
+      book['label']
     )
   end
   new_arr
