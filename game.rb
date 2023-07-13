@@ -4,7 +4,7 @@ class Game < Item
 
   def initialize(title, publish_date, multiplayer, last_played_at, genre, label)
     super(publish_date)
-    @title  = title
+    @title = title
     @multiplayer = multiplayer
     @last_played_at = last_played_at
     @genre = genre

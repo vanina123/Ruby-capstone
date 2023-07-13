@@ -5,7 +5,7 @@ RSpec.describe Label do
   describe '#Label' do
     it 'returns a hash representation of the label' do
       label = Label.new('Label 1')
-      album = MusicAlbum.new('freedom', 'Album', 'Pop', true)
+      album = MusicAlbum.new('freedom', 'Album', 'Pop', true, 'new')
       label.add_item(album)
 
       expect(label.title).to eq('Label 1')

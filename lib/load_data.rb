@@ -49,7 +49,7 @@ def load_game
   file = File.read('files/game.json')
   file_data = JSON.parse(file)
   file_data.each do |game|
-    new_arr << Game.new(game['title'],game['publish_date'],game['multiplayer'], game['last_played_at'], game['genre'], game['label'])
+    new_arr << Game.new(game['title'], game['publish_date'], game['multiplayer'], game['last_played_at'], game['genre'], game['label'])
   end
   new_arr
 end
