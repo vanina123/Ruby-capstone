@@ -20,7 +20,7 @@ class App
 
     def list_all_books
         @books.each do |book|
-            puts "Title: #{book.title} by  cover_state: #{book.cover_state} Genre: #{book.genre} publish date: #{book.publish_date}"
+            puts "Title: #{book.title} by #{book.author['first_name']} #{book.author['last_name']} cover_state: #{book.cover_state} Genre: #{book.genre} publish date: #{book.publish_date}"
         end
     end
 
