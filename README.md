@@ -122,8 +122,8 @@ _[JONATHAN]_
 - LinkedIn: [Vanina](https://www.linkedin.com/in/larissa-vanina/)
 
 
-👤 **Author3**
-_[ABDULLAH]_
+👤 **Abdullah AL-Khureif**
+- GitHub: [@OnlyUnknown](https://github.com/OnlyUnkown)
 
 <!-- FUTURE FEATURES -->
 
