@@ -101,7 +101,7 @@ To run tests, run the following command:
 
 ### The capstone recording
 
-[Recording](https://drive.google.com/file/d/1Qai9cfAQvFyQu7pfdmRmlIw0MMa_dql8/view?usp=drive_link)
+[Recording](https://drive.google.com/file/d/1Qai9cfAQvFyQu7pfdmRmlIw0MMa_dql8/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
