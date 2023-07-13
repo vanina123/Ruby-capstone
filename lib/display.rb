@@ -7,9 +7,9 @@ class Display
         4 => 'list_all_genre',
         5 => 'List_all_labels',
         6 => 'list_all_authors',
-        7 => 'add_book'
-        8 => 'add_music_album'
-        9 => 'add_game'
+        7 => 'add_book',
+        8 => 'add_music_album',
+        9 => 'add_game',
         10 => 'quit'
       }
     end

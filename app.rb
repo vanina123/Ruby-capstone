@@ -7,8 +7,8 @@ require_relative 'music_album'
 require_relative 'game'
 require_relative 'lib/save_data'
 require_relative 'lib/load_data'
-require_relative 'lib/saves_data'
-require_relative 'lib/loads_data'
+# require_relative 'lib/saves_data'
+# require_relative 'lib/loads_data'
 
 class App
     def initialize
@@ -73,7 +73,7 @@ class App
         first_name = gets.chomp
         print 'Last name of the Author:'
         last_name = gets.chomp
-        print 'cover_state'
+        print 'cover_state:'
         cover_state = gets.chomp
         print 'genre:'
         genre = gets.chomp
@@ -106,7 +106,7 @@ class App
             end
             newGenre = Genre.new(genre)
             music = MusicAlbum.new(title, artist, newGenre, on_spotify)
-            if @genre.include? genre == false
+            if @genre.include? genre === false
                 @genre << newGenre
             end
         @music << music
@@ -129,7 +129,7 @@ class App
         genre = gets.chomp
         newGenre = Genre.new(genre)
         game = Game.new(title,publish_date, multiplayer, newGenre)
-        if @genre.include? genre == false
+        if @genre.include? genre === false
             @genre << newGenre
         end
         @game << game

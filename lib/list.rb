@@ -1,6 +1,6 @@
 class List
     def list_options(menu)
-      puts "\n========== Libary App =========="
+      puts "\n========== Catalog Of My Things =========="
       puts '+--------------------------------------+'
       puts '|              DISPLAY MENU             |'
       puts '+--------------------------------------+'
@@ -8,7 +8,6 @@ class List
         puts "| #{choice}. #{action} |"
       end
   
-      # print 'Enter option: '
     end
 end
   
