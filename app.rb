@@ -26,7 +26,7 @@ class App
 
     def list_all_music_albums
         @music_albums.each do |music_album|
-            puts "title: #{music_album.title} by: #{music_album.artist} Genre: #{music_album.genre.name} spotify: #{music_album.on_spotify}"
+            puts "title: #{music_album.title} by: #{music_album.artist} Genre: #{music_album.genre} spotify: #{music_album.on_spotify}"
         end
     end
 
@@ -94,14 +94,14 @@ class App
         genre = gets.chomp
         print 'is it on spotify?[Y,N]:'
          spotify = gets.chomp
-         if spotify == "Y" or 'y'
+         if spotify == "Y" or spotify == 'y'
             on_spotify = true
          else 
             on_spotify = false
             end
             newGenre = Genre.new(genre)
-            music = MusicAlbum.new(title, artist, newGenre, on_spotify)
-
+            music = MusicAlbum.new(title, artist, newGenre.name, on_spotify)
+            @genres << newGenre
         @music_albums << music
         puts "the music album has been added"
     end
@@ -113,7 +113,7 @@ class App
         publish_date = gets.chomp
         print "is it a multiplayer game?[Y,N]:"
         answer = gets.chomp
-        if answer == "Y" or 'y'
+        if answer == "Y" or answer == 'y'
             multiplayer = true
          else 
             multiplayer = false
@@ -142,11 +142,12 @@ class App
 
     def save_music_albums(arr)
         new_arr = []
-        music_albums.each do |album|
+        @music_albums.each do |album|
           obj = {
             title: album.title,
             artist: album.artist,
-            genre: album.genre
+            genre: album.genre,
+            on_spotify: album.on_spotify
           }
           new_arr << obj
         end
@@ -155,10 +156,10 @@ class App
 
     def save_genre(arr)
         new_arr = []
-        genres.each do |genre|
+        @genres.each do |genre|
           obj = {
             name: genre.name,
-            item: genre.item
+            item: genre.items
           }
           new_arr << obj
         end
@@ -167,7 +168,7 @@ class App
 
     def save_author(arr)
         new_arr = []
-        authors.each do |author|
+        @authors.each do |author|
           obj = {
             first_name: author.first_name,
             last_name: author.last_name
@@ -179,7 +180,7 @@ class App
 
     def save_game(arr)
         new_arr = []
-        games.each do |game|
+        @games.each do |game|
           obj = {
             multiplayer: game.multiplayer,
             last_played_at: game.last_played_at
@@ -191,7 +192,7 @@ class App
 
     def save_book(arr)
         new_arr = []
-        books.each do |book|
+        @books.each do |book|
           obj = {
             publish_date: book.publish_date,
             title: book.title,
@@ -206,7 +207,7 @@ class App
 
     def save_label(arr)
         new_arr = []
-        labels.each do |label|
+        @labels.each do |label|
           obj = {
             title: label.title,
             items: label.items.map { |item| { name: item.name } }

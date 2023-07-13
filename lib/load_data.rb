@@ -7,13 +7,13 @@ require_relative '../book'
 require_relative '../label'
 
 def load_music_album
-  return [] if File.exist?('files/music_album.json') == false
+  return [] if File.exist?('files/music_albums.json') == false
 
   new_arr = []
-  file = File.read('files/music_album.json')
+  file = File.read('files/music_albums.json')
   file_data = JSON.parse(file)
   file_data.each do |album|
-    new_arr << MusicAlbum.new(album['title'], album['artist'], album['genre'])
+    new_arr << MusicAlbum.new(album['title'], album['artist'], album['genre'], album['on_spotify'])
   end
   new_arr
 end
@@ -25,7 +25,7 @@ def load_genre
   file = File.read('files/genre.json')
   file_data = JSON.parse(file)
   file_data.each do |genre|
-    new_arr << Genre.new(genre['name'], genre['item'])
+    new_arr << Genre.new(genre['name'])
   end
   new_arr
 end
